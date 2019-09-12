@@ -6,7 +6,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/products/create', function () {
-    return view('products.create');
-});
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/products/create', function () {
+//     return view('products.create');
+// });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
