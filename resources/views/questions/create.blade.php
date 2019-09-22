@@ -10,7 +10,7 @@
                         {{ __('Cadastrar Pergunta') }}
                     </div>
 
-                    <form class="w-full p-6" method="POST" action="{{ route('questions.store') }}" enctype="multipart/form-data">
+                    <form class="w-full p-6" method="POST" action="/questions" enctype="multipart/form-data">
                         @csrf
 
                         <div class="flex flex-wrap mb-6">
@@ -44,7 +44,7 @@
                             @endif
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
+                        {{-- <div class="flex flex-wrap mb-6">
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('Imagem') }}:
                             </label>
@@ -56,7 +56,7 @@
                                     {{ $errors->first('image') }}
                                 </p>
                             @endif
-                        </div>
+                        </div> --}}
 
                         <div class="flex flex-wrap">
                             <button type="submit" class="inline-block align-middle text-center select-none border font-bold whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700">
