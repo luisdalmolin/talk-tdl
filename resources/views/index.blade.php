@@ -12,7 +12,6 @@
 
             {{-- lista de questões --}}
             <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
-                {{--
                 <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
                     Questions
                 </div>
@@ -22,9 +21,7 @@
                         <a href="#" class="flex justify-between mb-4 p-6 text-gray-900 border border-gray-100 rounded">
                             <div class="flex">
                                 @if ($question->image)
-                                    <!--
                                     <img src="{{ asset('storage/'.$question->image) }}" alt="{{ $question->title }}" width="75" class="pr-6">
-                                    -->
                                 @endif
 
                                 <span class="font-bold">{{ ucfirst($question->title) }}</span>
@@ -33,20 +30,18 @@
                             <div class="text-center">
                                 <span class="text-gray-500 text-xs">{{ $question->user->name }}</span>
 
-                                <!--
                                 <form action="/questions/{{ $question->id }}" method="post" class="pt-4">
                                     @csrf
                                     @method('delete')
 
-                                    @if (auth()->user()->id == $question->user_id)
+                                    @can ('destroy', $question)
                                         <button type="submit" class="text-red-500 hover:text-red-700 text-xs p-0">excluir pergunta</button>
-                                    @endif
+                                    @endcan
                                 </form>
-                                -->
                             </div>
                         </a>
                     @endforeach
-                </div> --}}
+                </div>
             </div><!-- /flex -->
 
         </div>
